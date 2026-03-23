@@ -1,0 +1,153 @@
+Search in BST
+Given a binary search tree and an integer X, search if X exists in the BST or not.
+
+(Note: A binary search tree is a rooted binary tree data structure with the key of each internal node being greater than all the keys in the respective node's left subtree and less than the ones in its right subtree.)
+
+For eg., the given tree is a binary search tree and we can easily search whether node 
+6
+6 exists in it or not.
+
+BSTSEARCH
+
+Input Format
+The first line of the input contains two space separated integer 
+N
+N and 
+X
+X — the number of nodes in the binary search tree and the node which we need to search.
+Next 
+N
+−
+1
+N−1 lines contain three space separated characters 
+p
+i
+,
+c
+i
+,
+R
+i
+p 
+i
+​
+ ,c 
+i
+​
+ ,R 
+i
+​
+ , describing the tree with edge informations - 
+p
+i
+p 
+i
+​
+  is an integer denoting the parent node of the 
+i
+ith edge, 
+c
+i
+c 
+i
+​
+  is child node, and the letter 
+R
+i
+R 
+i
+​
+  denotes whether the child is left child or right child, it's value is L if 
+c
+i
+c 
+i
+​
+  is left child of 
+p
+i
+p 
+i
+​
+ , else R.
+Output Format
+Output on a single line YES if 
+X
+X is present in the given BST, otherwise NO.
+
+Constraints
+1
+≤
+N
+≤
+10000
+1≤N≤10000
+1
+≤
+p
+i
+,
+c
+i
+≤
+100000
+1≤p 
+i
+​
+ ,c 
+i
+​
+ ≤100000
+R
+i
+R 
+i
+​
+  = L or R
+All 
+p
+i
+p 
+i
+​
+ 's and 
+c
+i
+c 
+i
+​
+ 's are distinct.
+1
+≤
+X
+≤
+100000
+1≤X≤100000
+Sample 1:
+Input
+Output
+7 6
+4 2 L
+4 6 R
+2 1 L
+2 3 R
+6 5 L
+6 7 R
+YES
+
+class Solution {
+    public static boolean searchInBST(Node root, int x) {
+          if(root==null){
+              return false;
+          }
+          if(root.val==x) {
+              return true;
+          }
+          if(root.val>x){
+              return searchInBST(root.left,x);
+          }
+          else{
+             return searchInBST(root.right,x);
+          }
+    }
+}
