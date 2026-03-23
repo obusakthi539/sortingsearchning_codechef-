@@ -1,0 +1,137 @@
+Find maximum node in BST
+Given a binary search tree, find the maximum/largest node in it.
+
+For eg., the maximum node in the given BST is 7.
+
+BSTSEARCH
+
+Input Format
+The first line of the input contains s single integer 
+N
+N — the number of nodes in the binary search tree.
+Next 
+N
+−
+1
+N−1 lines contain three space separated characters 
+p
+i
+,
+c
+i
+,
+R
+i
+p 
+i
+​
+ ,c 
+i
+​
+ ,R 
+i
+​
+ , describing the tree with edge informations - 
+p
+i
+p 
+i
+​
+  is an integer denoting the parent node of the 
+i
+ith edge, 
+c
+i
+c 
+i
+​
+  is child node, and the letter 
+R
+i
+R 
+i
+​
+  denotes whether the child is left child or right child, it's value is L if 
+c
+i
+c 
+i
+​
+  is left child of 
+p
+i
+p 
+i
+​
+ , else R.
+Output Format
+Output on a single line - the the maximum node value of the given BST.
+
+Constraints
+1
+≤
+N
+≤
+10000
+1≤N≤10000
+1
+≤
+p
+i
+,
+c
+i
+≤
+100000
+1≤p 
+i
+​
+ ,c 
+i
+​
+ ≤100000
+R
+i
+R 
+i
+​
+  = L or R
+All 
+p
+i
+p 
+i
+​
+ 's and 
+c
+i
+c 
+i
+​
+ 's are distinct.
+Sample 1:
+Input
+Output
+7 
+4 2 L
+4 6 R
+2 3 R
+2 1 L
+6 5 L
+6 7 R
+7
+
+
+class Solution {
+    public static int maxNodeInBST(Node root) {
+      Node curr=root;
+      while(curr.right!=null)
+      {
+          curr=curr.right;
+      }
+      return curr.val;
+    }
+}
+
+
+
