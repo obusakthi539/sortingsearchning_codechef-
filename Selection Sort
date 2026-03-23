@@ -1,0 +1,67 @@
+Selection Sort
+Selection sort is a basic sorting algorithm. It sorts a list of items (like numbers or words) by repeatedly selecting the smallest (or largest, depending on the sorting order) item from the unsorted portion and moving it to the end of the sorted portion.
+
+Steps to Perform Selection Sort:
+Divide the List: Think of the list as divided into two parts: a sorted part (initially empty) and an unsorted part (the entire list initially).
+Find the Minimum: Look through the unsorted part of the list to find the smallest item.
+Swap: Swap the smallest item found with the first item of the unsorted part. Now, the first item is part of the sorted part.
+Repeat: Move the boundary of the sorted part one step to the right and repeat the process for the rest of the list.
+Continue: Continue these steps until all items are sorted.
+
+
+NGE
+Given an array of integers, find the next greater element for each element in the array. The next greater element for an element x in the array is the first greater element on the right side of x in the array. If no such element exists, output -1 for that element.
+
+Input Format
+The first line contains an integer n, representing the number of elements in the array.
+The second line contains n integers, representing the elements of the array.
+Output Format
+Output n integers, each representing the next greater element for the corresponding element in the array.
+Sample 1:
+Input
+Output
+4
+4 5 2 10
+5 10 10 -1
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++) {
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            int next=-1;
+            for(int j=i+1;j<n;j++){
+                if(a[j]>a[i]) {
+                    next=a[j];
+                    break;
+                }}
+            System.out.print(next+" ");
+        } }
+}
+
+===============================================================================
+SELECTION SORT
+
+
+public static void selectionSort(int[] a) {
+    int n=a.length;
+    for(int i=0;i<n-1;i++){
+        int minIndex=i;
+        for(int j=i+1;j<n;j++){
+            if(a[j]<a[minIndex])
+            {
+                minIndex=j;
+            } }  }
+       int t=a[i];
+       a[i]=a[minIndex];
+       a[minIndex]=t;
+}
+
+
+
+
