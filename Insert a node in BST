@@ -1,0 +1,121 @@
+Insert a node in BST
+You are given a Binary Search Tree (BST) and a value that needs to be inserted into this tree. Your task is to insert the given value into the BST while maintaining all BST properties and return the resulting tree. It is guaranteed that the value to be inserted does not already exist in the BST.
+
+There may be multiple correct BST structures after insertion depending on how you traverse the tree. Any valid BST that results from inserting the value is acceptable.
+
+The BST will be provided in level-order array format, where null represents an empty child.
+
+Input Format
+The first line of input will contain a single integer T, denoting the number of test cases.
+
+Each test case consists of multiple lines of input:
+
+The first line of each test case contains two space-separated integers N and VAL — where N is the number of nodes in the BST array representation and VAL is the value to be inserted.
+The second line contains N space-separated elements representing the BST in level-order. Use -1 to represent a null child.
+Output Format
+For each test case, print the level-order traversal of the BST after inserting the value. All null nodes must again be printed as -1. Print each test case output on a new line.
+
+Constraints
+1
+≤
+T
+≤
+1000
+1≤T≤1000
+0
+≤
+N
+≤
+10
+4
+0≤N≤10 
+4
+ 
+−
+10
+8
+≤
+Node.val
+≤
+10
+8
+−10 
+8
+ ≤Node.val≤10 
+8
+ 
+−
+10
+8
+≤
+VAL
+≤
+10
+8
+−10 
+8
+ ≤VAL≤10 
+8
+ 
+All node values in the tree are unique.
+The BST is given in level-order, and 
+-1
+-1 represents a null node.
+It is guaranteed that 
+VAL
+VAL does not exist in the original BST.
+The sum of 
+N
+N over all test cases does not exceed 
+10
+4
+10 
+4
+ .
+Sample 1:
+Input
+Output
+2
+5 12
+8 5 15 2 7
+6 9
+5 2 13 1 4 -1 -1
+8 5 15 2 7 12
+5 2 13 1 4 9
+Explanation:
+First Test case:
+The value 12 is inserted as the left child of 15. Any equivalent valid BST representation is acceptable.
+Second Test case:
+9 is inserted as the left child of 13.
+
+Sample 2:
+Input
+Output
+1
+7 3
+10 4 20 1 6 15 30
+10 4 20 1 6 15 30 -1 3
+Explanation:
+Here, 3 becomes the left child of 1.
+
+
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+         if(root==null){
+             return new TreeNode(val);
+         }
+         TreeNode curr=root;
+         while(true) {
+             if(val<curr.val){
+                 if(curr.left==null){
+                     curr.left=new TreeNode(val);
+                     break;
+                 }curr=curr.left;
+             } else{
+                 if(curr.right==null){
+                     curr.right=new TreeNode(val);
+                     break;}
+                 curr=curr.right;
+             } } return root;
+    }
+}
