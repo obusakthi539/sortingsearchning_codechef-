@@ -1,0 +1,83 @@
+Pyramid of Bricks
+You are given 
+N
+N bricks and want to construct a pyramid. A pyramid is built in layers where the 
+i
+i-th layer (from the top) requires i bricks.
+
+The 1st layer requires 
+1
+1 brick.
+The 2nd layer requires 
+2
+2 bricks.
+The 3rd layer requires 
+3
+3 bricks.
+And so on.
+For example, following is a pyramid of 
+4
+4 layers:pyramidYour task is to determine the maximum number of complete layers you can build using the given 
+N
+N bricks.
+
+Input Format
+The first line of the input contains the number of test cases, 
+T
+T.
+For each test case, a single integer, 
+N
+N, represents the number of bricks available.
+Output Format
+A single integer representing the maximum number of complete layers you can build.
+Constraints
+1
+≤
+T
+≤
+50
+1≤T≤50
+1
+≤
+N
+≤
+10
+9
+1≤N≤10 
+9
+ 
+Sample 1:
+Input
+Output
+2
+8
+15
+3
+5
+Explanation:
+Test Case 1: We can build 3 complete layers. Layer 1 requires 1 brick, Layer 2 requires 2 bricks, Layer 3 requires 3 bricks. Total bricks used = 1 + 2 + 3 = 6.
+The 4th layer requires 4 bricks, but only 2 are left. Therefore, the maximum number of complete layers is 3.
+Test Case 2: We can build 5 complete layers: Layer 1: Requires 1 brick, Layer 2 requires 2 bricks, Layer 3 requires 3 bricks, Layer 4 requires 4 bricks, Layer 5 requires 5 bricks
+Total bricks used = 1 + 2 + 3 + 4 + 5 = 15.
+All bricks are used, so the maximum number of complete layers is 5.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // Write your code here
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0)
+        {
+            int n=sc.nextInt();
+            int b=0;int h=0;
+            while(b+h<n)
+            {
+                h=h+1;
+                b=b+h;
+            }
+            System.out.println(h);
+        }
+    }
+}
