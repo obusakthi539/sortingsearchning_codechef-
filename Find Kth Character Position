@@ -1,0 +1,48 @@
+Find Kth Character Position
+Given a string s1, a character c1, and an integer k, find and print the position of the 
+k
+kth occurrence of the character c1 in the string s1. If the 
+k
+kth occurrence does not exist, print -1.
+
+Input Format
+The first line contains the string s1, the character c1, and the integer k separated by spaces.
+Output Format
+An integer representing the position of the 
+k
+kth occurrence of c1 in s1.
+If the 
+k
+kth occurrence does not exist, print -1.
+Sample 1:
+Input
+Output
+HelloHowyoudoing H 2
+5
+Sample 2:
+Input
+Output
+funny n 3
+-1
+
+import java.util.*;
+public class Main{
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        char c=sc.next().charAt(0);
+        int k=sc.nextInt();
+        boolean f=false;
+        int count=0;
+        for(int i=0;i<s.length();i++) {
+            if(s.charAt(i)==c){
+                count++;
+            }if(count==k){
+                System.out.println(i);
+                f=true;
+                break;
+            }}if(!f) {
+            System.out.println(-1);
+        }
+    }
+}
