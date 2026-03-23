@@ -1,0 +1,101 @@
+Linear Search in array
+Write a program to search for a specific element in an array and print "Yes" if the element is present, otherwise print "No".
+
+Input Format
+The first line contains an integer 
+n
+n, the length of the array and 
+k
+k, the element to be search.
+The second line contains 
+n
+n space-separated integers representing the elements of the array.
+Output Format
+Print "Yes" if the element 
+k
+k is present in the array.
+Print "No" if the element 
+k
+k is not present in the array.
+Sample 1:
+Input
+Output
+8 1
+3 5 1 4 5 6 5 6
+Yes
+Sample 2:
+Input
+Output
+3 4
+1 2 3
+No
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int s=sc.nextInt();
+		int a[]=new int[n];
+		for(int i=0;i<n;i++){
+		    a[i]=sc.nextInt();
+		}boolean f=false;
+		for(int i=0;i<n;i++){
+		    if(a[i]==s){
+		        f=true;
+		        break;
+		    }}
+		if(f){
+		    System.out.println("Yes");
+		}else{
+		    System.out.println("No");
+		}
+	}
+}
+=========================================
+Linear Search in string
+Given a string and a character as input, print the first position of the character in the string if it is present. If the character does not exist in the string, print "-1".
+
+Input Format
+The first line contains a string.
+The second line contains a single character.
+Output Format
+Print the first position (0-based index) of the character in the string if it is present.
+Print "-1" if the character is not present in the string.
+Sample 1:
+Input
+Output
+HelloHowYouDoing
+w
+7
+
+import java.util.*;
+public class Main{
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        char c=sc.next().charAt(0);
+        int pos=-1;
+        for(int i=0;i<s.length();i++)
+        {
+             if(s.charAt(i)==c)
+             {
+                 pos=i;
+                 break;
+             }
+        }
+        if(pos!=-1)
+        {
+            System.out.println(pos);
+        }
+        else{
+            System.out.println("-1");
+        }
+        
+    }
+}
