@@ -1,0 +1,160 @@
+Level Order Traversal
+Given a binary tree, print the level order traversal of its nodes. (i.e., from left to right, on each level).
+
+For example, the level order traversal of the following binary tree is:
+1
+2 3
+4 5
+
+BTLVLORDER
+
+Input Format
+The first line of the input contains a single integer 
+N
+N — the number of nodes in the binary tree.
+Next 
+N
+−
+1
+N−1 lines contain three space separated characters 
+p
+i
+,
+c
+i
+,
+R
+i
+p 
+i
+​
+ ,c 
+i
+​
+ ,R 
+i
+​
+ , describing the tree with edge informations - 
+p
+i
+p 
+i
+​
+  is an integer denoting the parent node of the 
+i
+ith edge, 
+c
+i
+c 
+i
+​
+  is child node, and the letter 
+R
+i
+R 
+i
+​
+  denotes whether the child is left child or right child, it's value is L if 
+c
+i
+c 
+i
+​
+  is left child of 
+p
+i
+p 
+i
+​
+ , else R.
+Output Format
+Output on the L separate lines, 
+N
+N space separated integers - its nodes in the level order traversal of the given tree, where L is total no. of levels in the given tree.
+
+Constraints
+1
+≤
+N
+≤
+10000
+1≤N≤10000
+1
+≤
+p
+i
+,
+c
+i
+≤
+100000
+1≤p 
+i
+​
+ ,c 
+i
+​
+ ≤100000
+R
+i
+R 
+i
+​
+  = L or R
+All 
+p
+i
+p 
+i
+​
+ 's and 
+c
+i
+c 
+i
+​
+ 's are distinct.
+Sample 1:
+Input
+Output
+5
+1 2 L
+1 3 R
+3 4 L
+3 5 R
+1
+2 3
+4 5
+
+==========================
+class Solution {
+    public void levelOrderTraversal(Node root) {
+        if(root == null) return;
+        Queue<Node> q = new LinkedList<>();
+
+        q.add(root);
+        q.add(null);
+
+        while(!q.isEmpty()){
+
+            Node curr = q.poll();
+
+            if(curr == null){
+                System.out.println();
+
+                if(!q.isEmpty())
+                    q.add(null);
+            }
+            else{
+
+                System.out.print(curr.val + " ");
+
+                if(curr.left != null)
+                    q.add(curr.left);
+
+                if(curr.right != null)
+                    q.add(curr.right);
+            }
+        }
+    }
+}
