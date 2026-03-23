@@ -1,0 +1,105 @@
+Symmetric binary tree
+You are given the root of a binary tree. Your task is to determine whether the tree is symmetric, meaning it is a mirror reflection of itself around its center.
+
+Function Declaration
+Function Name
+
+i
+s
+S
+y
+m
+m
+e
+t
+r
+i
+c
+isSymmetric
+Parameters
+
+r
+o
+o
+t
+root: The root node of the binary tree.
+Return Value
+
+Returns a boolean value — true if the binary tree is symmetric (a mirror of itself), otherwise false.
+Constraints
+The number of nodes in the tree is in the range 
+[
+1
+,
+1000
+]
+[1,1000].
+Each node’s value lies in the range 
+−
+100
+≤
+Node.val
+≤
+100
+−100≤Node.val≤100.
+Input Format
+The first line contains a single integer 
+T
+T, denoting the number of test cases.
+
+Each test case consists of two lines of input:
+
+The first line contains a single integer 
+N
+N — the number of nodes in the binary tree.
+The second line contains 
+N
+N space-separated values representing the level-order traversal of the tree. Use null (or -1 if preferred) to denote missing children.
+Output Format
+For each test case, output on a new line either:
+
+true — if the binary tree is symmetric
+false — otherwise
+Sample 1:
+Input
+Output
+2
+7
+1 2 2 null 5 5 null
+7
+1 2 2 null 3 null 4
+true
+false
+Explanation:
+For first test case
+        1
+      /   \
+     2     2
+      \   / 
+       5  5  
+The left and right subtrees are mirror images of each other.
+
+For second test case The tree looks like this:
+        1
+      /   \
+     2     2
+      \     \
+       3     4
+The structure is not symmetric.
+
+
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+      if(root==null)  return true;
+      return isMirror(root.left,root.right);
+      
+}private boolean isMirror(TreeNode a,TreeNode b){
+    if(a==null&&b==null) {
+        return true;
+    }
+    if(a==null||b==null) {
+        return false;
+    }if(a.val!=b.val) return false;
+    return isMirror(a.left,b.right)&&
+    isMirror(a.right,b.left);
+}}
