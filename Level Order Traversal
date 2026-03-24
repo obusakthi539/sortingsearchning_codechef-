@@ -1,130 +1,60 @@
-Level Order Traversal
-Given a binary tree, print the level order traversal of its nodes. (i.e., from left to right, on each level).
+LEVEL ORDER TRAVERSAL OF A BINARY TREE
 
-For example, the level order traversal of the following binary tree is:
-1
-2 3
-4 5
+You are given a binary tree. Your task is to print the level order traversal of its nodes. In level order traversal, nodes are visited level by level from left to right.
 
-BTLVLORDER
+TASK
 
-Input Format
-The first line of the input contains a single integer 
-N
-N — the number of nodes in the binary tree.
-Next 
-N
-−
-1
-N−1 lines contain three space separated characters 
-p
-i
-,
-c
-i
-,
-R
-i
-p 
-i
-​
- ,c 
-i
-​
- ,R 
-i
-​
- , describing the tree with edge informations - 
-p
-i
-p 
-i
-​
-  is an integer denoting the parent node of the 
-i
-ith edge, 
-c
-i
-c 
-i
-​
-  is child node, and the letter 
-R
-i
-R 
-i
-​
-  denotes whether the child is left child or right child, it's value is L if 
-c
-i
-c 
-i
-​
-  is left child of 
-p
-i
-p 
-i
-​
- , else R.
-Output Format
-Output on the L separate lines, 
-N
-N space separated integers - its nodes in the level order traversal of the given tree, where L is total no. of levels in the given tree.
+Print the nodes of the binary tree level by level.
 
-Constraints
-1
-≤
-N
-≤
-10000
-1≤N≤10000
-1
-≤
-p
-i
-,
-c
-i
-≤
-100000
-1≤p 
-i
-​
- ,c 
-i
-​
- ≤100000
-R
-i
-R 
-i
-​
-  = L or R
-All 
-p
-i
-p 
-i
-​
- 's and 
-c
-i
-c 
-i
-​
- 's are distinct.
-Sample 1:
-Input
-Output
+INPUT FORMAT
+
+The first line contains an integer N
+N is the number of nodes in the binary tree
+
+The next (N - 1) lines describe the edges of the tree
+Each line contains three values:
+pi ci Ri
+
+where
+pi is the parent node value
+ci is the child node value
+Ri represents the relationship
+L means ci is the left child of pi
+R means ci is the right child of pi
+
+OUTPUT FORMAT
+
+Print the level order traversal of the tree
+Each level should be printed on a new line
+Nodes in the same level should be space-separated
+
+CONSTRAINTS
+
+1 ≤ N ≤ 10000
+1 ≤ pi, ci ≤ 100000
+Ri is either L or R
+All node values are distinct
+
+SAMPLE INPUT
+
 5
 1 2 L
 1 3 R
 3 4 L
 3 5 R
+
+SAMPLE OUTPUT
+
 1
 2 3
 4 5
+
+EXPLANATION
+
+The tree is traversed level by level
+First level contains node 1
+Second level contains nodes 2 and 3
+Third level contains nodes 4 and 5
 
 ==========================
 class Solution {
