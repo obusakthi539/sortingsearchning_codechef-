@@ -1,131 +1,43 @@
-Search in BST
-Given a binary search tree and an integer X, search if X exists in the BST or not.
+SEARCH IN A BINARY SEARCH TREE (BST)
 
-(Note: A binary search tree is a rooted binary tree data structure with the key of each internal node being greater than all the keys in the respective node's left subtree and less than the ones in its right subtree.)
+You are given a Binary Search Tree (BST) and an integer X. Your task is to check whether the value X exists in the BST.
 
-For eg., the given tree is a binary search tree and we can easily search whether node 
-6
-6 exists in it or not.
+A Binary Search Tree is a tree where:
+All values in the left subtree are smaller than the root
+All values in the right subtree are greater than the root
 
-BSTSEARCH
+INPUT FORMAT
 
-Input Format
-The first line of the input contains two space separated integer 
-N
-N and 
-X
-X — the number of nodes in the binary search tree and the node which we need to search.
-Next 
-N
-−
-1
-N−1 lines contain three space separated characters 
-p
-i
-,
-c
-i
-,
-R
-i
-p 
-i
-​
- ,c 
-i
-​
- ,R 
-i
-​
- , describing the tree with edge informations - 
-p
-i
-p 
-i
-​
-  is an integer denoting the parent node of the 
-i
-ith edge, 
-c
-i
-c 
-i
-​
-  is child node, and the letter 
-R
-i
-R 
-i
-​
-  denotes whether the child is left child or right child, it's value is L if 
-c
-i
-c 
-i
-​
-  is left child of 
-p
-i
-p 
-i
-​
- , else R.
-Output Format
-Output on a single line YES if 
-X
-X is present in the given BST, otherwise NO.
+The first line contains two integers N and X
+N is the number of nodes in the BST
+X is the value to be searched
 
-Constraints
-1
-≤
-N
-≤
-10000
-1≤N≤10000
-1
-≤
-p
-i
-,
-c
-i
-≤
-100000
-1≤p 
-i
-​
- ,c 
-i
-​
- ≤100000
-R
-i
-R 
-i
-​
-  = L or R
-All 
-p
-i
-p 
-i
-​
- 's and 
-c
-i
-c 
-i
-​
- 's are distinct.
-1
-≤
-X
-≤
-100000
-1≤X≤100000
-Sample 1:
-Input
-Output
+The next (N - 1) lines describe the edges of the tree
+Each line contains three values:
+pi ci Ri
+
+where
+pi is the parent node value
+ci is the child node value
+Ri represents the relationship
+L means ci is the left child of pi
+R means ci is the right child of pi
+
+OUTPUT FORMAT
+
+Print YES if X exists in the BST
+Otherwise, print NO
+
+CONSTRAINTS
+
+1 ≤ N ≤ 10000
+1 ≤ pi, ci ≤ 100000
+Ri is either L or R
+All node values are distinct
+1 ≤ X ≤ 100000
+
+SAMPLE INPUT
+
 7 6
 4 2 L
 4 6 R
@@ -133,7 +45,14 @@ Output
 2 3 R
 6 5 L
 6 7 R
+
+SAMPLE OUTPUT
+
 YES
+
+EXPLANATION
+
+The value 6 exists in the BST, so the output is YES.
 
 class Solution {
     public static boolean searchInBST(Node root, int x) {
