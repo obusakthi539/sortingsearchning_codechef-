@@ -1,120 +1,72 @@
-Lower Bound
-You are given a sorted array 
-n
-u
-m
-s
-nums of length 
-n
-n and an integer 
-x
-x.
-Your task is to find the lower bound of 
-x
-x in the array.
+LOWER BOUND
 
-The lower bound of x is defined as the first (smallest) index i such that nums[i] >= x.
+You are given a sorted array nums of length n and an integer x. Your task is to find the lower bound of x in the array.
+
+The lower bound of x is defined as the smallest index i such that nums[i] is greater than or equal to x.
 
 If no such index exists, return n (the size of the array).
-The array is sorted in non-decreasing order.
-Function Declaration
-Function Name
-s
-o
-l
-v
-e
-solve – This function finds the lower bound index of a given value in a sorted array.
 
-Parameters
-n
-u
-m
-s
-nums : A reference to a sorted array of integers.
+The array is sorted in non-decreasing order.
+
+FUNCTION DESCRIPTION
+
+Function name: solve
+
+This function finds the lower bound index of a given value in a sorted array.
+
+PARAMETERS
+
+nums
+A sorted array of integers
+
 x
-x : The integer value whose lower bound is to be found.
-Return Value
-Returns the smallest index 
-i
-i such that 
-n
-u
-m
-s
-[
-i
-]
-≥
-x
-nums[i]≥x
-Returns 
-n
-n if no such index exists
-Constraints
-1
-≤
-n
-≤
-10
-5
-1≤n≤10 
-5
- 
-−
-10
-5
-≤
-n
-u
-m
-s
-[
-i
-]
-,
-x
-≤
-10
-5
-−10 
-5
- ≤nums[i],x≤10 
-5
- 
-n
-u
-m
-s
-nums is sorted in non-decreasing (ascending) order
-Input Format
-One line containing two integers: 
-n
-n and 
-x
-x
-One line containing 
-n
-n space-separated integers — the sorted array
-Output Format
+The target integer
+
+RETURN VALUE
+
+Return the smallest index i such that nums[i] is greater than or equal to x
+Return n if no such index exists
+
+CONSTRAINTS
+
+1 ≤ n ≤ 100000
+-100000 ≤ nums[i], x ≤ 100000
+nums is sorted in non-decreasing order
+
+INPUT FORMAT
+
+One line containing two integers n and x
+One line containing n space-separated integers representing the sorted array
+
+OUTPUT FORMAT
+
 Print a single integer — the lower bound index
-Sample 1:
-Input
-Output
+
+SAMPLE INPUT
+
 6 7
 2 4 6 8 10 12
-3
-Explanation:
-At index 3, the element 8 is the first number >= 7.
 
-Sample 2:
-Input
-Output
+SAMPLE OUTPUT
+
+3
+
+EXPLANATION
+
+At index 3, the element 8 is the first number greater than or equal to 7
+
+SAMPLE INPUT
+
 5 -1
 0 1 2 3 4
+
+SAMPLE OUTPUT
+
 0
-Explanation:
-All numbers are greater than -1. So the answer is index 0.
+
+EXPLANATION
+
+All elements are greater than -1, so the lower bound is index 0
 
 static int solve(int[] nums, int x) {
        int left=0;
