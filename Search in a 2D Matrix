@@ -1,72 +1,66 @@
-Search in a 2D Matrix
-You are given an N × M matrix where:
+SEARCH IN A 2D MATRIX
 
-Each row is sorted in ascending order.
-The first integer of each row is greater than the last integer of the previous row.
-Your task is to find if an integer Target exists in the matrix.
+You are given an N × M matrix with the following properties:
 
-Note: You must implement a solution with a time complexity faster than O(N + M).
+Each row is sorted in ascending order
+The first element of each row is greater than the last element of the previous row
 
-Input Format
-The first line contains two integers, N and M, separated by a space, representing the number of rows and columns in the matrix, respectively.
-The next N lines each contain M integers, representing the elements of the matrix.
-The final line contains a single integer, Target, which is the value to search for in the matrix.
-Output Format
-Print YES if the Target exists in the matrix.
-Print NO otherwise.
-Constraints
-1
-≤
-m
-,
-n
-≤
-100
-1≤m,n≤100
-−
-10
-4
-≤
-matrix
-[
-i
-]
-[
-j
-]
-,
-target
-≤
-10
-4
-−10 
-4
- ≤matrix[i][j],target≤10 
-4
- 
-The matrix is guaranteed to be non-empty and sorted.
-Sample 1:
-Input
-Output
+Your task is to determine whether a given target value exists in the matrix.
+
+Your solution must be faster than O(N + M) time complexity.
+
+INPUT FORMAT
+
+The first line contains two integers N and M
+N is the number of rows
+M is the number of columns
+
+The next N lines each contain M space-separated integers representing the matrix
+
+The last line contains a single integer Target
+
+OUTPUT FORMAT
+
+Print YES if the target exists in the matrix
+Print NO otherwise
+
+CONSTRAINTS
+
+1 ≤ N, M ≤ 100
+-10000 ≤ matrix[i][j], Target ≤ 10000
+The matrix is non-empty and sorted
+
+SAMPLE INPUT
+
 3 4
-1 3 5 7 
-10 11 16 20 
+1 3 5 7
+10 11 16 20
 23 30 34 60
 3
+
+SAMPLE OUTPUT
+
 YES
-Explanation:
-Test case 1: The target 3 exists in the matrix
-Sample 2:
-Input
-Output
+
+EXPLANATION
+
+The target value 3 exists in the matrix
+
+SAMPLE INPUT
+
 3 4
-1 3 5 7 
-10 11 16 20 
+1 3 5 7
+10 11 16 20
 23 30 34 60
 13
+
+SAMPLE OUTPUT
+
 NO
-Explanation:
-Test case 2: The target 13 does not exists in the matrix
+
+EXPLANATION
+
+The target value 13 does not exist in the matrix
 
 import java.util.*;
 public class Main {
