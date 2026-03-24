@@ -1,119 +1,36 @@
-Print nodes in sorted order
-Given a binary search tree, print its nodes in sorted order.
+PRINT NODES IN SORTED ORDER
 
-For eg., the nodes in sorted order of the given BST are: 1 2 3 4 5 6 7
+You are given a Binary Search Tree (BST). Your task is to print all the nodes of the BST in sorted order.
 
-BSTSEARCH
+INPUT FORMAT
 
-Input Format
-The first line of the input contains s single integer 
-N
-N — the number of nodes in the binary search tree.
-Next 
-N
-−
-1
-N−1 lines contain three space separated characters 
-p
-i
-,
-c
-i
-,
-R
-i
-p 
-i
-​
- ,c 
-i
-​
- ,R 
-i
-​
- , describing the tree with edge informations - 
-p
-i
-p 
-i
-​
-  is an integer denoting the parent node of the 
-i
-ith edge, 
-c
-i
-c 
-i
-​
-  is child node, and the letter 
-R
-i
-R 
-i
-​
-  denotes whether the child is left child or right child, it's value is L if 
-c
-i
-c 
-i
-​
-  is left child of 
-p
-i
-p 
-i
-​
- , else R.
-Output Format
-Output on a single line 
-N
-N space separated integers - the node values of given BST in sorted order.
+The first line contains an integer N
+N is the number of nodes in the BST
 
-Constraints
-1
-≤
-N
-≤
-10000
-1≤N≤10000
-1
-≤
-p
-i
-,
-c
-i
-≤
-100000
-1≤p 
-i
-​
- ,c 
-i
-​
- ≤100000
-R
-i
-R 
-i
-​
-  = L or R
-All 
-p
-i
-p 
-i
-​
- 's and 
-c
-i
-c 
-i
-​
- 's are distinct.
-Sample 1:
-Input
-Output
+The next (N - 1) lines describe the edges of the tree
+Each line contains three values:
+pi ci Ri
+
+where
+pi is the parent node value
+ci is the child node value
+Ri represents the relationship
+L means ci is the left child of pi
+R means ci is the right child of pi
+
+OUTPUT FORMAT
+
+Print N space-separated integers representing the node values in sorted order
+
+CONSTRAINTS
+
+1 ≤ N ≤ 10000
+1 ≤ pi, ci ≤ 100000
+Ri is either L or R
+All node values are distinct
+
+SAMPLE INPUT
+
 7
 4 2 L
 4 6 R
@@ -121,8 +38,15 @@ Output
 2 1 L
 6 5 L
 6 7 R
+
+SAMPLE OUTPUT
+
 1 2 3 4 5 6 7
 
+EXPLANATION
+
+In a Binary Search Tree, inorder traversal gives nodes in sorted order.
+So the output is 1 2 3 4 5 6 7.
 
 class Solution {
     public static void printNodes(Node root) {
