@@ -1,91 +1,63 @@
-Symmetric binary tree
-You are given the root of a binary tree. Your task is to determine whether the tree is symmetric, meaning it is a mirror reflection of itself around its center.
+SYMMETRIC BINARY TREE
 
-Function Declaration
-Function Name
+You are given a binary tree. Your task is to determine whether the tree is symmetric, meaning it is a mirror reflection of itself around its center.
 
-i
-s
-S
-y
-m
-m
-e
-t
-r
-i
-c
-isSymmetric
-Parameters
+FUNCTION DESCRIPTION
 
-r
-o
-o
-t
-root: The root node of the binary tree.
-Return Value
+Function name: isSymmetric
 
-Returns a boolean value — true if the binary tree is symmetric (a mirror of itself), otherwise false.
-Constraints
-The number of nodes in the tree is in the range 
-[
-1
-,
-1000
-]
-[1,1000].
-Each node’s value lies in the range 
-−
-100
-≤
-Node.val
-≤
-100
-−100≤Node.val≤100.
-Input Format
-The first line contains a single integer 
-T
-T, denoting the number of test cases.
+This function checks whether a binary tree is symmetric.
 
-Each test case consists of two lines of input:
+PARAMETERS
 
-The first line contains a single integer 
-N
-N — the number of nodes in the binary tree.
-The second line contains 
-N
-N space-separated values representing the level-order traversal of the tree. Use null (or -1 if preferred) to denote missing children.
-Output Format
-For each test case, output on a new line either:
+root
+The root node of the binary tree
 
-true — if the binary tree is symmetric
-false — otherwise
-Sample 1:
-Input
-Output
+RETURN VALUE
+
+Return true if the binary tree is symmetric
+Return false otherwise
+
+CONSTRAINTS
+
+1 ≤ number of nodes ≤ 1000
+-100 ≤ Node value ≤ 100
+
+INPUT FORMAT
+
+The first line contains an integer T, the number of test cases
+
+For each test case:
+The first line contains an integer N
+The second line contains N space-separated values representing the tree in level order
+Use null or -1 to represent missing nodes
+
+OUTPUT FORMAT
+
+For each test case, print:
+true if the tree is symmetric
+false otherwise
+
+SAMPLE INPUT
+
 2
 7
 1 2 2 null 5 5 null
 7
 1 2 2 null 3 null 4
+
+SAMPLE OUTPUT
+
 true
 false
-Explanation:
-For first test case
-        1
-      /   \
-     2     2
-      \   / 
-       5  5  
-The left and right subtrees are mirror images of each other.
 
-For second test case The tree looks like this:
-        1
-      /   \
-     2     2
-      \     \
-       3     4
-The structure is not symmetric.
+EXPLANATION
+
+In the first test case
+The left and right subtrees are mirror images, so the tree is symmetric
+
+In the second test case
+The structure is not a mirror image, so the tree is not symmetric
 
 
 class Solution {
