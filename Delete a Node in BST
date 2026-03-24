@@ -1,133 +1,45 @@
-Delete a Node in BST
-Given a Binary Search Tree (BST) and a target node 
-X
-X, delete the node from the BST. The goal is to return the reference to the root node, which may be modified after the deletion process. The solution can be achieved into two main steps:
+DELETE A NODE IN A BINARY SEARCH TREE (BST)
 
-Search for the given node.
-If the node is found, delete it and return the updated reference to the root node of the modified BST.
-Video Explanation
+You are given a Binary Search Tree (BST) and a value X. Your task is to delete the node with value X from the BST and return the root of the modified tree.
 
-For eg., in the following BST, node 2 is deleted:
+The solution involves two main steps:
 
-BSTSEARCH
+Search for the node with value X.
+If the node is found, delete it while maintaining the BST properties.
 
-Input Format
-The first line of the input contains two space separated integers 
-N
-N and 
-X
-X — the number of nodes in the binary search tree, and the node to be deleted.
-Next 
-N
-−
-1
-N−1 lines contain three space separated characters 
-p
-i
-,
-c
-i
-,
-R
-i
-p 
-i
-​
- ,c 
-i
-​
- ,R 
-i
-​
- , describing the tree with edge informations - 
-p
-i
-p 
-i
-​
-  is an integer denoting the parent node of the 
-i
-ith edge, 
-c
-i
-c 
-i
-​
-  is child node, and the letter 
-R
-i
-R 
-i
-​
-  denotes whether the child is left child or right child, it's value is L if 
-c
-i
-c 
-i
-​
-  is left child of 
-p
-i
-p 
-i
-​
- , else R.
-Output Format
-Complete the given function and return the root of modified BST after node 
-X
-X's deletion.
+INPUT FORMAT:
 
-Constraints
-1
-≤
-N
-≤
-10000
-1≤N≤10000
-1
-≤
-p
-i
-,
-c
-i
-≤
-100000
-1≤p 
-i
-​
- ,c 
-i
-​
- ≤100000
-R
-i
-R 
-i
-​
-  = L or R
-All 
-p
-i
-p 
-i
-​
- 's and 
-c
-i
-c 
-i
-​
- 's are distinct.
-1
-≤
-X
-≤
-100000
-1≤X≤100000
-Sample 1:
-Input
-Output
+The first line contains two integers:
+N X
+where
+N is the number of nodes in the BST
+X is the value of the node to be deleted
+
+The next (N - 1) lines describe the tree edges.
+Each line contains:
+pi ci Ri
+
+where
+pi is the parent node value
+ci is the child node value
+Ri represents the relationship:
+L means ci is the left child of pi
+R means ci is the right child of pi
+
+OUTPUT FORMAT:
+
+Return the root of the modified BST after deleting node X.
+
+CONSTRAINTS:
+
+1 ≤ N ≤ 10000
+1 ≤ pi, ci ≤ 100000
+All node values are distinct
+Ri is either L or R
+1 ≤ X ≤ 100000
+
+SAMPLE INPUT:
+
 10 8
 3 1 L
 8 3 L
@@ -138,6 +50,9 @@ Output
 18 16 L
 19 18 L
 19 20 R
+
+SAMPLE OUTPUT:
+
 Successfully deleted the node!
 
 
