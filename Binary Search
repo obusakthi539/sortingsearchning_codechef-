@@ -1,141 +1,50 @@
-Find the insert position
+FIND THE INSERT POSITION
+
 You are given a sorted array of unique integers and a target number. Your task is to return the index of the target if it exists in the array. If the target is not present, return the index where it should be inserted so that the array remains sorted.
 
 Your solution must run in O(log n) time complexity.
 
-Function Declaration
-Function Name
-s
-e
-a
-r
-c
-h
-I
-n
-s
-e
-r
-t
-P
-o
-s
-i
-t
-i
-o
-n
-searchInsertPosition – This function returns the index of a target element in a sorted array. If the element is not present, it returns the position where it should be inserted to maintain sorted order.
+FUNCTION DESCRIPTION
 
-Parameters
-a
-r
-r
-arr : A reference to a sorted array of unique integers.
-t
-a
-r
-g
-e
-t
-target : The integer value to be searched or inserted.
-Return Value
-Returns the index of 
-t
-a
-r
-g
-e
-t
-target if it exists.
-Returns the index where 
-t
-a
-r
-g
-e
-t
-target should be inserted if it does not exist.
-Constraints
-1
-≤
-T
-≤
-10
-1≤T≤10
-1
-≤
-n
-≤
-10
-4
-1≤n≤10 
-4
- 
-−
-10
-4
-≤
-a
-r
-r
-[
-i
-]
-≤
-10
-4
-−10 
-4
- ≤arr[i]≤10 
-4
- 
-Elements in 
-a
-r
-r
-arr are unique and sorted in non-decreasing order
-−
-10
-4
-≤
-t
-a
-r
-g
-e
-t
-≤
-10
-4
-−10 
-4
- ≤target≤10 
-4
- 
-Input Format
-The first line contains an integer 
-T
-T — number of test cases.
-For each test case:
-One line containing two integers: 
-n
-n and 
-t
-a
-r
-g
-e
-t
+Function name: searchInsertPosition
+
+This function returns the index of a target element in a sorted array. If the element is not present, it returns the position where it should be inserted to maintain sorted order.
+
+PARAMETERS
+
+arr
+A sorted array of unique integers
+
 target
-One line containing 
-n
-n space-separated integers — the sorted array
-Output Format
-For each test case, print a single integer — the insert position.
-Sample 1:
-Input
-Output
+The integer value to be searched or inserted
+
+RETURN VALUE
+
+Return the index of target if it exists
+Return the index where target should be inserted if it does not exist
+
+CONSTRAINTS
+
+1 ≤ T ≤ 10
+1 ≤ n ≤ 10000
+-10000 ≤ arr[i] ≤ 10000
+All elements in arr are unique and sorted in non-decreasing order
+-10000 ≤ target ≤ 10000
+
+INPUT FORMAT
+
+The first line contains an integer T, the number of test cases
+
+For each test case:
+One line containing two integers n and target
+One line containing n space-separated integers representing the sorted array
+
+OUTPUT FORMAT
+
+For each test case, print a single integer representing the insert position
+
+SAMPLE INPUT
+
 3
 4 8
 2 4 8 10
@@ -143,10 +52,12 @@ Output
 2 4 8 10
 4 12
 2 4 8 10
+
+SAMPLE OUTPUT
+
 2
 2
 4
-
 class Solution {
     public int searchInsertPosition(int[] arr, int target) {
           int left=0;
