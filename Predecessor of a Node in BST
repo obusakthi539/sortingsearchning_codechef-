@@ -1,127 +1,44 @@
-Predecessor of a Node in BST
-Determine the inorder predecessor of a given node X in a binary search tree. The inorder predecessor, denoted as node Y, is the node that immediately precedes X in the inorder traversal of the binary tree. If no such predecessor exists, return -1.
+PREDECESSOR OF A NODE IN A BINARY SEARCH TREE (BST)
 
-For eg., the inorder predecessor of node 6 is node 5 in the following BST:
+You are given a Binary Search Tree (BST) and a node value X. Your task is to find the inorder predecessor of node X.
 
-BSTSEARCH
+The inorder predecessor of a node is the node that appears just before it in the inorder traversal of the BST.
 
-Input Format
-The first line of the input contains two space separated integers 
-N
-N and 
-X
-X — the number of nodes in the binary search tree, and the node whose predecessor we're looking for.
-Next 
-N
-−
-1
-N−1 lines contain three space separated characters 
-p
-i
-,
-c
-i
-,
-R
-i
-p 
-i
-​
- ,c 
-i
-​
- ,R 
-i
-​
- , describing the tree with edge informations - 
-p
-i
-p 
-i
-​
-  is an integer denoting the parent node of the 
-i
-ith edge, 
-c
-i
-c 
-i
-​
-  is child node, and the letter 
-R
-i
-R 
-i
-​
-  denotes whether the child is left child or right child, it's value is L if 
-c
-i
-c 
-i
-​
-  is left child of 
-p
-i
-p 
-i
-​
- , else R.
-Output Format
-Output on a single line - the predecessor node value of node 
-X
-X, if it exists, else -1.
+If no predecessor exists, return -1.
 
-Constraints
-1
-≤
-N
-≤
-10000
-1≤N≤10000
-1
-≤
-p
-i
-,
-c
-i
-≤
-100000
-1≤p 
-i
-​
- ,c 
-i
-​
- ≤100000
-R
-i
-R 
-i
-​
-  = L or R
-All 
-p
-i
-p 
-i
-​
- 's and 
-c
-i
-c 
-i
-​
- 's are distinct.
-1
-≤
-X
-≤
-100000
-1≤X≤100000
-Sample 1:
-Input
-Output
+INPUT FORMAT
+
+The first line contains two integers N and X
+N is the number of nodes in the BST
+X is the node whose predecessor is to be found
+
+The next (N - 1) lines describe the edges of the tree
+Each line contains three values:
+pi ci Ri
+
+where
+pi is the parent node value
+ci is the child node value
+Ri represents the relationship
+L means ci is the left child of pi
+R means ci is the right child of pi
+
+OUTPUT FORMAT
+
+Print a single integer
+The inorder predecessor of node X if it exists
+Otherwise, print -1
+
+CONSTRAINTS
+
+1 ≤ N ≤ 10000
+1 ≤ pi, ci ≤ 100000
+Ri is either L or R
+All node values are distinct
+1 ≤ X ≤ 100000
+
+SAMPLE INPUT
+
 7 6
 4 2 L
 4 6 R
@@ -129,7 +46,14 @@ Output
 2 1 L
 6 5 L
 6 7 R
+
+SAMPLE OUTPUT
+
 5
+
+EXPLANATION
+
+In the inorder traversal, node 5 comes just before node 6, so 5 is the predecessor.
 
 // import java.util.*;
 
